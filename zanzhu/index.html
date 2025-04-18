@@ -1,100 +1,97 @@
-# 网页头部信息
-head:
-  - meta:
-      http-equiv: Content-Type
-      content: text/html; charset=UTF-8
-  - meta:
-      http-equiv: x-dns-prefetch-control
-      content: on
-  - meta:
-      http-equiv: X-UA-Compatible
-      content: IE=edge, chrome=1
-  - meta:
-      name: renderer
-      content: webkit
-  - meta:
-      name: viewport
-      content: width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no
-  - meta:
-      http-equiv: Cache-Control
-      content: no-transform
-  - meta:
-      http-equiv: Cache-Control
-      content: no-siteapp
-  - title: White Server
-  - meta:
-      name: keywords
-      content: Minecraft,White Server,我的世界
-  - meta:
-      name: description
-      content: White Server
-  - meta:
-      property: og:site_name
-      content: White Server
-  - meta:
-      property: og:title
-      content: White Server
-  - link:
-      href: ./list/style.min.css
-      rel: stylesheet
-  - conditional-comment:
-      condition: lt IE 9
-      content:
-        - script:
-            src: static/js/html5.min.js
-        - script:
-            src: static/js/respond.min.js
+<!DOCTYPE html>
+<html lang="en">
 
-# 网页主体内容
-body:
-  - conditional-comment:
-      condition: lt IE 9
-      content:
-        - div:
-            class: browsehappy
-            role: dialog
-            content: 当前网页 <strong>不支持</strong> 你正在使用的浏览器. 为了正常的访问, 请升级你的浏览器</a>。
-  - div:
-      class: container grid-sm s-content header
-      content:
-        - div:
-            class: column col-12
-            content:
-              - h1:
-                  class: logo
-                  content: 
-                    - em:
-                        class: ico i-love
-                    - a: 赞助榜
-              - p:
-                  class: description
-                  content: 这里记录了 <a href="https://kaitouhan.github.io/MrLiu/" target="_blank">@White Server</a> 和 <a href="https://kaitouhan.github.io/MrLiu/zanzhu/" target="_blank">@支持者</a> 的点点滴滴.<br>相信我们还会留下更多美好的回忆，谢谢大家的 <a href="https://afdian.net/@MrLiu">赞助</a> ！
-              - p:
-                  class: description
-                  content: 最后更新时间：2020年6月9日
-  - div:
-      class: container grid-sm s-content posts
-      content:
-        - div:
-            class: column col-12
-            content:
-              - ol:
-                  content:
-                    - li:
-                        class: ""
-                        content:
-                          - p:
-                              content: <b>Mr_Liu 赞助 脑子 <font color="#FF0000">+1000 ↑ ↑ ↑  </font></b> 秃头 掉发
-                    - li: ""
-                    - li: ""
-                    - li: ""
-                    - li: ""
-                    - li: ""
-                    - li: ""
-  - div:
-      class: container grid-sm s-content footer
-      content:
-        - div:
-            class: column col-12
-            content:
-              - p: ""
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" rel="stylesheet">
+    <title>排行榜</title>
+    <style>
+        /* 自定义 Material Design 风格样式 */
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #fafafa;
+        }
+
+        header {
+            background-color: #2196f3;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .card {
+            background-color: #fff;
+            border-radius: 4px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            transition: box-shadow 0.3s ease;
+        }
+
+        .card:hover {
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .rank-1 {
+            color: #ffc107;
+        }
+
+        .rank-2 {
+            color: #9e9e9e;
+        }
+
+        .rank-3 {
+            color: #f57c00;
+        }
+    </style>
+</head>
+
+<body class="min-h-screen flex flex-col">
+    <!-- 标题部分 -->
+    <header class="text-white p-8 text-center">
+        <h1 class="text-4xl font-bold">排行榜</h1>
+    </header>
+    <!-- 排行榜内容 -->
+    <main class="flex-grow container mx-auto p-8">
+        <div class="card p-6 space-y-4">
+            <ol class="list-decimal list-inside">
+                <li class="flex items-center justify-between p-4 border-b border-gray-200">
+                    <div class="flex items-center space-x-4">
+                        <i class="fa-solid fa-user text-2xl text-gray-500"></i>
+                        <div>
+                            <h2 class="text-lg font-bold">用户 1</h2>
+                            <p class="text-gray-600">得分: 1000</p>
+                        </div>
+                    </div>
+                    <span class="text-xl font-bold rank-1">第 1 名</span>
+                </li>
+                <li class="flex items-center justify-between p-4 border-b border-gray-200">
+                    <div class="flex items-center space-x-4">
+                        <i class="fa-solid fa-user text-2xl text-gray-500"></i>
+                        <div>
+                            <h2 class="text-lg font-bold">用户 2</h2>
+                            <p class="text-gray-600">得分: 800</p>
+                        </div>
+                    </div>
+                    <span class="text-xl font-bold rank-2">第 2 名</span>
+                </li>
+                <li class="flex items-center justify-between p-4 border-b border-gray-200">
+                    <div class="flex items-center space-x-4">
+                        <i class="fa-solid fa-user text-2xl text-gray-500"></i>
+                        <div>
+                            <h2 class="text-lg font-bold">用户 3</h2>
+                            <p class="text-gray-600">得分: 600</p>
+                        </div>
+                    </div>
+                    <span class="text-xl font-bold rank-3">第 3 名</span>
+                </li>
+                <!-- 可根据需要添加更多排行榜项 -->
+            </ol>
+        </div>
+    </main>
+    <!-- 页脚 -->
+    <footer class="bg-gray-800 text-white p-4 text-center">
+        <p>&copy; 2025 排行榜版权所有</p>
+    </footer>
+</body>
+
+</html>
+    
